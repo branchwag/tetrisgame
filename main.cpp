@@ -17,7 +17,8 @@ int main () {
     // grid.grid[17][8] = 7;
     grid.Print();
 
-    LBlock block = LBlock(); 
+    //LBlock block = LBlock(); 
+    TBlock block = TBlock(); 
    
    while(WindowShouldClose() == false) {
 
