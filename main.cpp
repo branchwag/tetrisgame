@@ -18,7 +18,8 @@ int main () {
     grid.Print();
 
     //LBlock block = LBlock(); 
-    TBlock block = TBlock(); 
+    TBlock block = TBlock();
+    block.Move(4,3); 
    
    while(WindowShouldClose() == false) {
 
