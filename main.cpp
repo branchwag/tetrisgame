@@ -19,7 +19,7 @@ int main () {
 
     //LBlock block = LBlock(); 
     TBlock block = TBlock();
-    block.Move(4,3); 
+    //block.Move(4,3); 
    
    while(WindowShouldClose() == false) {
 
