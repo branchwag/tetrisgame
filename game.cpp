@@ -61,8 +61,9 @@ void Game::MoveBlockRight(){
 
 void Game::MoveBlockDown(){
     currentBlock.Move(1, 0);
-        if(IsBlockOutside()){
+        if(IsBlockOutside() || BlockFits() == false){
         currentBlock.Move(-1, 0);
+        LockBlock();
     }
 }
 
@@ -82,4 +83,23 @@ void Game::RotateBlock(){
     if(IsBlockOutside()){
         currentBlock.UndoRotation();
     }
+}
+
+void Game::LockBlock() {
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
+    for(Position item: tiles){
+        grid.grid[item.row][item.column] = currentBlock.id;
+    }
+    currentBlock = nextBlock;
+    nextBlock = GetRandomBlock(); 
+}
+
+bool Game::BlockFits() {
+    std::vector<Position> tiles = currentBlock.GetCellPositions();
+    for(Position item: tiles){
+        if(grid.IsCellEmpty(item.row, item.column) == false){
+            return false;
+        }
+    }
+    return true;
 }
