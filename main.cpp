@@ -24,6 +24,8 @@ int main () {
     InitWindow(500, 620, "Tetris");
     SetTargetFPS(60);
 
+    Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
+
     Game game = Game();
 
     //Grid grid = Grid();
@@ -47,6 +49,7 @@ int main () {
         ClearBackground(darkBlue);
         //grid.Draw();
         //block.Draw();
+        DrawTextEx(font, "Score", {365, 15}, 38, 2, WHITE);
         game.Draw();
 
         EndDrawing();
