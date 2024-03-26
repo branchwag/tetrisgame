@@ -38,13 +38,25 @@ void Game::HandleInput(){
         case KEY_LEFT:
             MoveBlockLeft();
             break;
+        case KEY_A:
+            MoveBlockLeft();
+            break;
         case KEY_RIGHT:
+            MoveBlockRight();
+            break;
+        case KEY_D:
             MoveBlockRight();
             break;
         case KEY_DOWN:
             MoveBlockDown();
             break;
+        case KEY_S:
+            MoveBlockDown();
+            break;
         case KEY_UP:
+            RotateBlock();
+            break;
+        case KEY_W:
             RotateBlock();
             break;
     }
